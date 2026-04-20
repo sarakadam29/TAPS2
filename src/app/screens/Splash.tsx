@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { FloatingHearts3D } from "../components/FloatingHearts3D";
 
 export function Splash() {

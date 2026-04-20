@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, useMotionValue, useTransform } from "motion/react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { MapPin, Star } from "lucide-react";
 
 interface SwipeCardProps {

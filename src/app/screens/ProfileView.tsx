@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Briefcase, GraduationCap, Heart, X, MessageCircle, Star } from "lucide-react";
 import { BottomNav } from "../components/BottomNav";
 import { Sidebar } from "../components/Sidebar";

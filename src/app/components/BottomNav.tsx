@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Home, Heart, Compass, MessageCircle, User } from "lucide-react";
 
 const tabs = [

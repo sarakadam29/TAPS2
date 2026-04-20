@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Root() {
   const location = useLocation();

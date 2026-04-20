@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Heart, Clock } from "lucide-react";
 import confetti from "canvas-confetti";
 import { mockUsers } from "../data/mockUsers";

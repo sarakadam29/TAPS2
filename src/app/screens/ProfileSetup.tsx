@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Camera, Check } from "lucide-react";
 
 const vibes = [

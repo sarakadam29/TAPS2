@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Bell, SlidersHorizontal, Heart, X, MessageCircle } from "lucide-react";
 import { SwipeCard } from "../components/SwipeCard";
 import { BottomNav } from "../components/BottomNav";

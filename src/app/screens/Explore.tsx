@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { BottomNav } from "../components/BottomNav";
 import { Sidebar } from "../components/Sidebar";
