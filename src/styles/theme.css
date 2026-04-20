@@ -1,0 +1,138 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* TAPS Premium Dark System */
+  
+  /* Backgrounds */
+  --bg-base: #09090b; /* Deep obsidian */
+  --bg-surface: rgba(24, 24, 27, 0.6); /* Translucent plate */
+  --bg-elevated: rgba(39, 39, 42, 0.8);
+  --bg-muted: #18181b;
+  --bg-overlay: rgba(9, 9, 11, 0.85);
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(255, 255, 255, 0.15);
+  
+  /* Primary Accent - Neon Pink/Purple Glow */
+  --accent-primary: #f43f5e;     /* Rose-500 */
+  --accent-primary-hover: #e11d48;
+  --accent-primary-soft: rgba(244, 63, 94, 0.15);
+  --accent-primary-pale: rgba(244, 63, 94, 0.05);
+  --accent-primary-glow: rgba(244, 63, 94, 0.4);
+  
+  /* Secondary Accent - Vibrant Violet */
+  --accent-secondary: #8b5cf6;   /* Violet-500 */
+  --accent-secondary-hover: #7c3aed;
+  --accent-secondary-soft: rgba(139, 92, 246, 0.15);
+  --accent-secondary-pale: rgba(139, 92, 246, 0.05);
+  
+  /* Tertiary Accent - Cyan/Teal */
+  --accent-tertiary: #06b6d4;    /* Cyan-500 */
+  --accent-tertiary-alt: #0891b2;
+  --accent-tertiary-soft: rgba(6, 182, 212, 0.15);
+  --accent-tertiary-pale: rgba(6, 182, 212, 0.05);
+  
+  /* Mint/Success */
+  --accent-mint: #10b981; /* Emerald-500 */
+  --accent-mint-soft: rgba(16, 185, 129, 0.15);
+  
+  /* Premium Gold */
+  --accent-gold: #fbbf24; /* Amber-400 */
+  --accent-gold-soft: rgba(251, 191, 36, 0.15);
+  
+  /* Text System */
+  --text-primary: #fafafa; /* Zinc-50 */
+  --text-secondary: #a1a1aa; /* Zinc-400 */
+  --text-tertiary: #71717a; /* Zinc-500 */
+  --text-on-accent: #ffffff;
+  --text-link: #a78bfa;
+  
+  /* Action-Specific */
+  --btn-pass: rgba(24, 24, 27, 0.8);
+  --btn-pass-border: rgba(255, 255, 255, 0.1);
+  --btn-pass-icon: #f43f5e;
+  --btn-message: rgba(24, 24, 27, 0.8);
+  --btn-message-icon: #8b5cf6;
+  --btn-like: #f43f5e;
+  --notification-badge: #f43f5e;
+  --status-online: #10b981;
+  --status-ghost-warn: #fbbf24;
+  
+  /* Spacing & Radius */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Font Settings */
+  --font-size: 16px;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Legacy Compat */
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --primary: #f43f5e;
+  --primary-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --ring: #f43f5e;
+}
+
+@theme inline {
+  --color-bg-base: var(--bg-base);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-muted: var(--bg-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
+  --color-accent-mint: var(--accent-mint);
+  --color-accent-gold: var(--accent-gold);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-active: var(--border-active);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  html { font-size: var(--font-size); }
+  h1, h2, h3, h4, label, button, input { line-height: 1.5; }
+  h1 { font-size: var(--text-2xl); font-weight: var(--font-weight-medium); }
+  h2 { font-size: var(--text-xl); font-weight: var(--font-weight-medium); }
+  h3 { font-size: var(--text-lg); font-weight: var(--font-weight-medium); }
+  h4 { font-size: var(--text-base); font-weight: var(--font-weight-medium); }
+  label, button { font-size: var(--text-base); font-weight: var(--font-weight-medium); }
+  input { font-size: var(--text-base); font-weight: var(--font-weight-normal); }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  * { -webkit-tap-highlight-color: transparent; }
+}
