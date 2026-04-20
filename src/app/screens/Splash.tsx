@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
-import { FloatingHearts3D } from "../components/FloatingHearts3D";
+
+const FloatingHearts3D = lazy(() => import("../components/FloatingHearts3D").then(module => ({ default: module.FloatingHearts3D })));
 
 export function Splash() {
   const navigate = useNavigate();
@@ -47,7 +48,9 @@ export function Splash() {
         }}
       />
 
-      <FloatingHearts3D count={10} />
+      <Suspense fallback={null}>
+        <FloatingHearts3D count={10} />
+      </Suspense>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center max-w-md px-6">

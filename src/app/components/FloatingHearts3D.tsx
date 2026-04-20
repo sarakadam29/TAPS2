@@ -1,10 +1,10 @@
-import * as THREE from 'three';
+import { Mesh, Shape, ExtrudeGeometry } from 'three';
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
 
 function Heart({ position, rotation, scale, color }: any) {
-  const meshRef = useRef<THREE.Mesh>(null);
+  const meshRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -18,7 +18,7 @@ function Heart({ position, rotation, scale, color }: any) {
 
   const geometry = useMemo(() => {
     const x = 0, y = 0;
-    const heartShape = new THREE.Shape();
+    const heartShape = new Shape();
     heartShape.moveTo(x + 5, y + 5);
     heartShape.bezierCurveTo(x + 5, y + 5, x + 4, y, x, y);
     heartShape.bezierCurveTo(x - 6, y, x - 6, y + 7, x - 6, y + 7);
@@ -28,7 +28,7 @@ function Heart({ position, rotation, scale, color }: any) {
     heartShape.bezierCurveTo(x + 7, y, x + 5, y + 5, x + 5, y + 5);
 
     const extrudeSettings = { depth: 2, bevelEnabled: true, bevelSegments: 1, steps: 1, bevelSize: 0.5, bevelThickness: 0.5 };
-    const geom = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
+    const geom = new ExtrudeGeometry(heartShape, extrudeSettings);
     geom.center();
     geom.scale(0.04, 0.04, 0.04);
     geom.rotateX(Math.PI);

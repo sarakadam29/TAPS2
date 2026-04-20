@@ -6,7 +6,7 @@ export function Root() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-base)', overflow: 'hidden' }}>
-      <AnimatePresence mode="popLayout">
+      <AnimatePresence>
         <motion.div
           key={location.pathname}
           initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}

@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import { Heart, Clock } from "lucide-react";
 import confetti from "canvas-confetti";
 import { mockUsers } from "../data/mockUsers";
-import { FloatingHearts3D } from "../components/FloatingHearts3D";
+
+const FloatingHearts3D = lazy(() => import("../components/FloatingHearts3D").then(module => ({ default: module.FloatingHearts3D })));
 
 export function Match() {
   const navigate = useNavigate();
@@ -46,7 +47,9 @@ export function Match() {
         }}
       />
 
-      <FloatingHearts3D count={25} />
+      <Suspense fallback={null}>
+        <FloatingHearts3D count={25} />
+      </Suspense>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center max-w-md">
